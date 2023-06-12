@@ -135,18 +135,17 @@ window.onload = function() {
 //     // let compara = (linkWidth & linkHeight) === 48 ? true : false
 //     // console.log(compara)
 //     // if(linkWidth < 48 && linkHeight < 48 ){
-//     //     console.log('é menor que 48px ' + 
+//     //     console.log('é menor que 48px ' +
 //     //     'A width do elemento ' + 'é ' +linkWidth+ ' A height do elemento é ' +linkHeight)
 //     // }
 //     if (linkWidth > 48 && linkHeight > 48) {
-//         console.log('é maior que 48px ' + 
+//         console.log('é maior que 48px ' +
 //         'A width do elemento ' + 'é ' +linkWidth+ ' A height do elemento é ' +linkHeight)
 //     }
 //     else{
 //         console.log('elemento menor que 48px. '+ 'A width do elemento ' + 'é ' +linkWidth+ 'e a height do elemento é ' +linkHeight)
 //     }
 // });
-
 
 /*/
 
@@ -196,3 +195,5 @@ links.addEventListener('click', function() {
 //remove um elemento
 
 //Se o usuário clicar na tecla(t), aumente todo o texto do site.
+
+
