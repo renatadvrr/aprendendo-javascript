@@ -1,44 +1,67 @@
-// console.log("oi 2"),
+// destructuring no contexto de objetos
 
-// const imagens = document.querySelectorAll("exemplo-id");
+// let produto = {
+//  description: "Notebook",
+//  preco: 2500,
+//  detalhes: {
+//   fabricante: "asus",
+//   modelo: "FDS2",
+//   facbricacao: "data",
+//  },
+// };
 
-// const teste = imagens.forEach((e) => {
-//  return console.log(e);
-// });
-// console.log(imagens);
+// let {description, preco} = produto
+// console.log(produto)
 
-const arrayCursos = {
- boolean: true,
- color: "gold",
- number: 1,
- cursos: [
-  {
-   id: 1,
-   materiaA: "materiaA",
-   materiaB: "materiaB",
-  },
-  {
-   id: 2,
-   materiaA: "materiaC",
-   materiaB: "materiaD",
-  },
-  {
-   id: 3,
-   materiaA: "materiaE",
-   materiaB: "materiaF",
-  },
- ],
-};
+// // renomear as variáveis
+// let {description: descricao, preco: price} = produto
+// console.log(descricao, price)
 
-let idReceived = 4;
-// const teste = arrayCursos.filter((curso) => curso.id === idReceived);
-// console.log(teste);
+//valores default para lidar com atributos undefined
 
-const randomNumbers = [10, 42, 84, 5];
+// let { description: descricao, preco: price = 0, desconto =5 } = produto;
+// console.log(desconto);
 
-const numbersGreateThan42 = randomNumbers.filter((iten) => iten > 37);
-console.log(numbersGreateThan42);
+//extrair atributos de objetos pertences a atributos de objetos
+// let {
+//  description,
+//  detalhes: { fabricante, modelo },
+// } = produto;
+// console.log(description, fabricante, modelo);
 
-const teste = arrayCursos.cursos.filter((curso) => curso.id === idReceived);
+// destructuring no contexto de array
 
-console.log(teste);
+// let arr = [10, 20, 30, 40, 15];
+
+// function test(a, b) {
+//  console.log(a, b);
+// }
+// function test([a, b]) { //desestruturing
+// function test([a, b, , c]) { //pular valores
+// function test([a, b, , c, d = "não existe"]) {
+//  //pular valores
+//  console.log(a, b, c, d);
+// }
+// // test(arr);
+
+// let obj = {
+//  a: 10,
+//  b: 20,
+//  c: 30,
+//  d: 40,
+// };
+
+// function test2({a, b}) {
+//         console.log(a,b)
+// }
+// test2(obj)
+
+// destructuring no contexto rest - condensar índices de um array ou atributo de um obj
+
+//array
+// let [a, ...x] = arr
+// console.log(a, x)
+
+// let {a, ...x} = obj
+// console.log(a,x)
+
