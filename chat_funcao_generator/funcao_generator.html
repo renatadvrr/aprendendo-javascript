@@ -1,0 +1,66 @@
+<html>
+
+<body>
+    <script>
+        function* conversar() {
+            //escopo próprio
+            //bloco 1
+            let opcao = yield 'E aí, tudo bem?'
+
+            //bloco 2
+            console.log(opcao)
+            if (opcao == 'sim') {
+                yield 'ótimo, fico feliz!'
+
+                opcao = yield 'Como eu posso te ajudar? Quer uma piada para começar?'
+
+                if (opcao == 'sim') {
+                    fetch('dados/piadas.json')
+                        .then(response => response.json())
+                        .then(piadas => {
+                            let piada = piadas[Math.floor(Math.random() * 10)]
+
+                            console.log(piada.piada)
+
+                            setTimeout(() => {
+                                console.log(piada.resposta)
+                                console.log('kkkkkk muito boa, né?')
+
+                            }, 4000)
+                        })
+                    yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com atendente'
+
+
+                } else {
+                    yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com atendente'
+
+                }
+            } else {
+                yield 'Respire fundo e tenha paciência'
+
+                yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com atendente'
+            }
+            return 'Atendimento finalizado'
+        }
+
+        let conversa = conversar() // obj iterator
+
+        function acao() {
+            let resposta = document.getElementById('resposta').value
+            let iteracao = conversa.next(resposta)
+            console.log(iteracao)
+
+            if (iteracao.done) {
+                document.getElementById('teste').style.display = 'none'
+            }
+        }
+
+
+    </script>
+    <div id="teste">
+        <button type="button" onclick="acao()">Avançar</button>
+        Resposta: <input type="text" name="" id="resposta">
+    </div>
+</body>
+
+</html>

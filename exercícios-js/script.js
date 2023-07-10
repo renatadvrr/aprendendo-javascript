@@ -65,3 +65,54 @@
 // let {a, ...x} = obj
 // console.log(a,x)
 
+// class Pessoa {
+//  constructor(nome='', idade) {
+//   this.nome = nome;
+//   this.idade = idade;
+//  }
+//  saudacao() {
+//   console.log(`olá, ${this.nome} e tenho ${this.idade}` );
+//  }
+// }
+// let pessoa = new Pessoa();
+// pessoa.saudacao();
+
+// class Aluno extends Pessoa {
+//  constructor() {
+//   super('renata', 30); //acessa o construtor da classe pai
+//   this.notas = { t1: 7, t2: 8, p1: 6, p2: 9 };
+//  }
+//  mediaPonderada() {
+//   let m = this.notas.t1 * 2;
+//   m += this.notas.t2 * 2;
+//   m += this.notas.p1 * 3;
+//   m += this.notas.p2 * 3;
+//   m = m / 10;
+
+//   return m;
+//  }
+// }
+
+// let aluno = new Aluno();
+// console.log("Aluno ", aluno.mediaPonderada());
+// aluno.saudacao();
+
+// function* testeGenerator() {
+//  yield console.log("Teste 1");
+
+//  yield console.log("Teste 2");
+//  yield console.log("Teste 3");
+
+//  return "Teste 4";
+// }
+
+// let meuGenerator = testeGenerator(); // obj iterador
+// console.log(meuGenerator);
+// meuGenerator.next();
+// console.log("----------");
+// meuGenerator.next();
+// console.log("----------");
+// meuGenerator.next();
+// console.log("----------");
+// console.log(meuGenerator.next());
+
