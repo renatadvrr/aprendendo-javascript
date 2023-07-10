@@ -1,0 +1,58 @@
+<html>
+
+<body>
+    <script>
+
+        let promessa = new Promise((resolve, reject) => {
+        //     try {
+        //         setTimeout(() => {
+        //             resolve('Promessa concluída com sucesso!')
+        //         }, 3000)
+        //     }
+        //     catch(e) {
+        //         setTimeout(() => {
+        //             reject(e)
+        //         }, 3000)
+        //     }
+        // })
+
+        // setTimeout(() => {
+        //     console.log(promessa)
+        // }, 5000)
+        // console.log(promessa)
+
+        setTimeout(() => {
+            //requisição foi realizada de algum modo
+            let resposta_da_requisicao = {}
+
+            //erro na requisição
+            if (true) {
+                resposta_da_requisicao = {
+                    codigo: 1050,
+                    erro: 'Falha de autorização'
+                }
+                reject(resposta_da_requisicao)
+            }
+            resposta_da_requisicao = {
+                0: { id: 1, nome: 'João' },
+                1: { id: 2, nome: 'José' },
+                2: { id: 3, nome: 'Maria' },
+            }
+            resolve(resposta_da_requisicao)
+        }, 4000)
+
+    }).then(dados => {
+        console.log('Operação sequencial', dados)
+        //retur capturado pelo segundo then
+        return 'Parâmetro 1 para o then 2'
+    }).then(param => {
+        console.log('then 2 ', param)
+    }).catch(erro => {
+        console.log('Operacao sequencial (Catch): ', erro)
+    })
+
+
+    </script>
+</body>
+
+</html>
